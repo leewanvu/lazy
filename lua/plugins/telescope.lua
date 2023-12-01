@@ -62,6 +62,9 @@ return {
           height = 0.8,
           preview_cutoff = 120,
         },
+        preview = {
+          filesize_limit = 0.1, -- MB
+        },
         sorting_strategy = "ascending",
         winblend = 0,
         mappings = {
