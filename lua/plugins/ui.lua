@@ -17,12 +17,12 @@ return {
     event = "VimEnter",
     opts = function(_, opts)
       local logo = [[
-██╗   ██╗██╗   ██╗██╗  ██╗
-██║   ██║██║   ██║╚██╗██╔╝
-██║   ██║██║   ██║ ╚███╔╝ 
-╚██╗ ██╔╝██║   ██║ ██╔██╗ 
- ╚████╔╝ ╚██████╔╝██╔╝ ██╗
-  ╚═══╝   ╚═════╝ ╚═╝  ╚═╝
+    ██╗   ██╗██╗   ██╗██╗  ██╗
+    ██║   ██║██║   ██║╚██╗██╔╝
+    ██║   ██║██║   ██║ ╚███╔╝ 
+    ╚██╗ ██╔╝██║   ██║ ██╔██╗ 
+    ╚████╔╝ ╚██████╔╝██╔╝ ██╗
+      ╚═══╝   ╚═════╝ ╚═╝  ╚═╝
       ]]
 
       logo = string.rep("\n", 8) .. logo .. "\n\n"
@@ -45,5 +45,17 @@ return {
         button.key_format = "  %s"
       end
     end,
+  },
+
+  {
+    "echasnovski/mini.indentscope",
+    opts = {
+      draw = {
+        -- disable animation
+        animation = function()
+          return 0
+        end,
+      },
+    },
   },
 }

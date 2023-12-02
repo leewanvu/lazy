@@ -14,3 +14,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.wo.conceallevel = 0
   end,
 })
+
+-- set tab = 2
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "lua" },
+  callback = function(e)
+    -- print(string.format(vim.inspect(e)))
+    local val = 2
+    vim.bo[e.buf].tabstop = val
+    vim.bo[e.buf].softtabstop = val
+    vim.bo[e.buf].shiftwidth = val
+  end,
+})

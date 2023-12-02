@@ -41,6 +41,29 @@ return {
         filter = {},
       },
     }
+
+    opts.cmdline = {
+      -- view = "cmdline",
+      format = {
+        cmdline = { icon = "" },
+        search_down = { icon = "  " },
+        search_up = { icon = "  " },
+      },
+    }
+
+    opts.views = {
+      cmdline_popup = {
+        border = {
+          style = "none",
+          padding = { 1, 2 },
+        },
+        filter_options = {},
+        win_options = {
+          winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+        },
+      },
+    }
+
     -- opts.status = { lsp_progress = { event = "lsp", kind = "progress" } }
 
     vim.api.nvim_create_autocmd("FileType", {
