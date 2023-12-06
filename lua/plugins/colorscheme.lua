@@ -1,4 +1,5 @@
 return {
+  { "ellisonleao/gruvbox.nvim", enabled = false },
   {
     "tokyonight.nvim",
     priority = 1000,

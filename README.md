@@ -10,3 +10,5 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 - [x] Config terminal
 - [x] Disable animate indent line
 - [x] Indent PHP
+- [] Custom statusline
+- [] Keymap gitsigns
