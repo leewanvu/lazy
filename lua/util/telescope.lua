@@ -13,7 +13,7 @@ function M.find_files()
     "!{node_modules,.git,vendor}",
   }
 
-  return Util.telescope("files", opts)
+  return Util.telescope("find_files", opts)
 end
 
 return M

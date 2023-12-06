@@ -65,7 +65,7 @@ return {
             hidden = true,
             grouped = true,
             previewer = false,
-            initial_mode = "normal",
+            initial_mode = "insert",
             -- layout_config = { height = 40 },
           })
         end,
