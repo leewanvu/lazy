@@ -12,3 +12,4 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 - [x] Indent PHP
 - [] Custom statusline
 - [] Keymap gitsigns
+- [] Create extra lang php
