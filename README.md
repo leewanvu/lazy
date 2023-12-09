@@ -14,3 +14,4 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 - [] Keymap gitsigns
 - [] Create extra lang php
 - [] incline.nvim - do not show in one window
+- [] Re-config tmux
