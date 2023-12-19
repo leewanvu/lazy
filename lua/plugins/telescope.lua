@@ -11,9 +11,9 @@ return {
           require("telescope").load_extension("undo")
         end,
       },
-      {
-        "nvim-telescope/telescope-file-browser.nvim",
-      },
+      -- {
+      --   "nvim-telescope/telescope-file-browser.nvim",
+      -- },
     },
     keys = {
       { "<leader>ff", Util.find_files(), desc = "Find Files (root dir)" },
@@ -49,29 +49,29 @@ return {
         end,
         desc = "Find Lazy Plugin Spec",
       },
-      {
-        "<leader>fe",
-        function()
-          local telescope = require("telescope")
-
-          local function telescope_buffer_dir()
-            return vim.fn.expand("%:p:h")
-          end
-
-          telescope.extensions.file_browser.file_browser({
-            path = "%:p:h",
-            cwd = telescope_buffer_dir(),
-            respect_gitignore = false,
-            hidden = true,
-            grouped = true,
-            previewer = false,
-            initial_mode = "insert",
-            -- layout_config = { height = 40 },
-          })
-        end,
-        desc = "File Browser (cwd)",
-      },
-      { "<leader>e", "<leader>fe", desc = "Explorer (cwd)", remap = true },
+      -- {
+      --   "<leader>fe",
+      --   function()
+      --     local telescope = require("telescope")
+      --
+      --     local function telescope_buffer_dir()
+      --       return vim.fn.expand("%:p:h")
+      --     end
+      --
+      --     telescope.extensions.file_browser.file_browser({
+      --       path = "%:p:h",
+      --       cwd = telescope_buffer_dir(),
+      --       respect_gitignore = false,
+      --       hidden = true,
+      --       grouped = true,
+      --       previewer = false,
+      --       initial_mode = "insert",
+      --       -- layout_config = { height = 40 },
+      --     })
+      --   end,
+      --   desc = "File Browser (cwd)",
+      -- },
+      -- { "<leader>e", "<leader>fe", desc = "Explorer (cwd)", remap = true },
     },
     config = function(_, opts)
       local telescope = require("telescope")
@@ -109,17 +109,17 @@ return {
         },
       })
 
-      opts.extensions = {
-        file_browser = {
-          -- theme = "dropdown",
-          -- previewer = false,
-          -- disables netrw and use telescope-file-browser in its place
-          hijack_netrw = true,
-        },
-      }
+      -- opts.extensions = {
+      --   file_browser = {
+      --     -- theme = "dropdown",
+      --     -- previewer = false,
+      --     -- disables netrw and use telescope-file-browser in its place
+      --     hijack_netrw = true,
+      --   },
+      -- }
 
       telescope.setup(opts)
-      require("telescope").load_extension("file_browser")
+      -- require("telescope").load_extension("file_browser")
     end,
   },
 }

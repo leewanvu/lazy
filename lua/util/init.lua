@@ -12,7 +12,7 @@ function M.cowboy()
       if vim.v.count > 0 then
         count = 0
       end
-      if count >= 10 and vim.bo.buftype ~= "nofile" then
+      if count >= 15 and vim.bo.buftype ~= "nofile" then
         ok, id = pcall(vim.notify, " Bớt lại Vũ ơi!", vim.log.levels.WARN, {
           -- icon = "🤠 ",
           icon = "🔥 ",
