@@ -1,6 +1,10 @@
 return {
   { "ellisonleao/gruvbox.nvim", enabled = false },
   {
+    "luisiacc/gruvbox-baby",
+    enabled = false,
+  },
+  {
     "tokyonight.nvim",
     priority = 1000,
     opts = function()
@@ -57,6 +61,27 @@ return {
           hl.TelescopeResultsTitle = { bg = c.bg_dark, fg = c.bg_dark }
         end,
       }
+    end,
+  },
+  {
+    "gbprod/nord.nvim",
+    lazy = false,
+    priority = 1000,
+    -- enabled = false,
+    config = function()
+      require("nord").setup({})
+      -- vim.cmd.colorscheme("nord")
+    end,
+  },
+  {
+    "EdenEast/nightfox.nvim",
+    -- enabled = false,
+    config = function()
+      -- Default options
+      require("nightfox").setup({})
+
+      -- setup must be called before loading
+      -- vim.cmd.colorscheme("dawnfox")
     end,
   },
 }

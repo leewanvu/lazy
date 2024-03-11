@@ -15,3 +15,4 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 - [] Create extra lang php
 - [x] incline.nvim - do not show in one window
 - [] Re-config tmux
+- [] Setup copilot
