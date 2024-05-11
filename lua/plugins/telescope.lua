@@ -93,6 +93,7 @@ return {
         },
         sorting_strategy = "ascending",
         winblend = 0,
+        selection_caret = " ",
         mappings = {
           i = {
             ["<C-j>"] = actions.move_selection_next,

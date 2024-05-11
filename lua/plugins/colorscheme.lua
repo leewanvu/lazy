@@ -1,19 +1,14 @@
 return {
-  { "ellisonleao/gruvbox.nvim", enabled = false },
-  {
-    "luisiacc/gruvbox-baby",
-    enabled = false,
-  },
   {
     "tokyonight.nvim",
     priority = 1000,
     opts = function()
       return {
-        style = "storm",
+        style = "day",
         -- transparent = true,
         -- styles = {
-        -- sidebars = "transparent",
-        -- floats = "transparent",
+        --   sidebars = "transparent",
+        --   floats = "transparent",
         -- },
         sidebars = {
           "qf",
@@ -23,34 +18,40 @@ return {
           "startuptime",
           "Outline",
         },
+        day_brightness = 0,
+        hide_inactive_statusline = false,
+        dim_inactive = true,
+        lualine_bold = false,
         -- on_colors = function(c)
-        -- local hsluv = require("tokyonight.hsluv")
-        -- local function randomColor(color)
-        --   if color ~= "NONE" then
-        --     local hsl = hsluv.hex_to_hsluv(color)
-        --     hsl[1] = math.random(0, 360)
-        --     return hsluv.hsluv_to_hex(hsl)
+        --   local hsluv = require("tokyonight.hsluv")
+        --   local function randomColor(color)
+        --     if color ~= "NONE" then
+        --       local hsl = hsluv.hex_to_hsluv(color)
+        --       hsl[1] = math.random(0, 360)
+        --       return hsluv.hsluv_to_hex(hsl)
+        --     end
+        --     return color
         --   end
-        --   return color
-        -- end
-        -- local function set(colors)
-        --   if type(colors) == "table" then
-        --     for k, v in pairs(colors) do
-        --       if type(v) == "string" then
-        --         colors[k] = randomColor(v)
-        --       elseif type(v) == "table" then
-        --         set(v)
+        --   local function set(colors)
+        --     if type(colors) == "table" then
+        --       for k, v in pairs(colors) do
+        --         if type(v) == "string" then
+        --           colors[k] = randomColor(v)
+        --         elseif type(v) == "table" then
+        --           set(v)
+        --         end
         --       end
         --     end
         --   end
-        -- end
-        -- set(c)
+        --   set(c)
         -- end,
         on_highlights = function(hl, c)
           hl.CursorLineNr = { fg = c.orange, bold = true }
           -- hl.LineNr = { fg = c.orange, bold = true }
-          hl.LineNrAbove = { fg = c.fg_gutter }
-          hl.LineNrBelow = { fg = c.fg_gutter }
+          -- hl.LineNrAbove = { fg = c.fg_gutter }
+          -- hl.LineNrBelow = { fg = c.fg_gutter }
+
+          -- borderless telescope
           local prompt = "#2d3149"
           hl.TelescopeNormal = { bg = c.bg_dark, fg = c.fg_dark }
           hl.TelescopeBorder = { bg = c.bg_dark, fg = c.bg_dark }
@@ -67,7 +68,7 @@ return {
     "gbprod/nord.nvim",
     lazy = false,
     priority = 1000,
-    -- enabled = false,
+    enabled = false,
     config = function()
       require("nord").setup({})
       -- vim.cmd.colorscheme("nord")
@@ -75,13 +76,63 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
-    -- enabled = false,
+    enabled = false,
     config = function()
       -- Default options
       require("nightfox").setup({})
 
       -- setup must be called before loading
       -- vim.cmd.colorscheme("dawnfox")
+    end,
+  },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    priority = 1000,
+    config = function()
+      require("rose-pine").setup({
+        variant = "auto",
+        dark_variant = "dawn",
+        dim_inactive_windows = false,
+        extend_background_behind_borders = true,
+
+        enable = {
+          terminal = true,
+          legacy_highlight = true,
+          migration = true,
+        },
+
+        styles = {
+          bold = true,
+          italic = false,
+          transparent = false,
+        },
+
+        highlight_groups = {
+          -- borderless telescope
+          TelescopeBorder = { fg = "overlay", bg = "overlay" },
+          TelescopeNormal = { fg = "subtle", bg = "overlay" },
+          TelescopeSelection = { fg = "text", bg = "highlight_med" },
+          TelescopeSelectionCaret = { fg = "love", bg = "highlight_med" },
+          TelescopeMultiSelection = { fg = "text", bg = "highlight_high" },
+
+          TelescopeTitle = { fg = "base", bg = "love" },
+          TelescopePromptTitle = { fg = "base", bg = "pine" },
+          TelescopePreviewTitle = { fg = "base", bg = "iris" },
+
+          TelescopePromptNormal = { fg = "text", bg = "surface" },
+          TelescopePromptBorder = { fg = "surface", bg = "surface" },
+
+          -- lovely statusline
+          StatusLine = { fg = "pine", bg = "pine", blend = 10 },
+          StatusLineNC = { fg = "subtle", bg = "surface" },
+
+          InclineNormal = { fg = "surface", bg = "pine" },
+          InclineNormalNC = { fg = "text", bg = "surface" },
+        },
+      })
+
+      vim.cmd("colorscheme rose-pine")
     end,
   },
 }

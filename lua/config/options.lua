@@ -18,3 +18,7 @@ vim.opt.smarttab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
+
+-- lovely statusline
+vim.opt.laststatus = 3
+vim.opt.statusline = " %f %m %= %l:%c ♥ "

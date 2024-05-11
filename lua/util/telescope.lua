@@ -12,6 +12,7 @@ function M.find_files()
     "-g",
     "!{node_modules,.git,vendor}",
   }
+  -- opts.previewer = false
 
   return Util.telescope("find_files", opts)
 end

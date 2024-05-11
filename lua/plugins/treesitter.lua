@@ -16,6 +16,7 @@ return {
         "scss",
         "sql",
         "vue",
+        "thrift",
       })
     end,
   },
