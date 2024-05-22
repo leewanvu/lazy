@@ -1,7 +1,75 @@
+--- Check if it is morning
+--- @return boolean
+local function is_morning()
+  local hour = tonumber(os.date("%H"))
+  return hour >= 6 and hour < 12
+end
+
+--- Check if it is afternoon
+--- @return boolean
+local function is_afternoon()
+  local hour = tonumber(os.date("%H"))
+  return hour >= 12 and hour < 18
+end
+
+--- Check if it is evening
+--- @return boolean
+local function is_evening()
+  local hour = tonumber(os.date("%H"))
+  return hour >= 18 and hour < 24
+end
+
+--- Set colorscheme by time
+--- @return string
+local function set_colorscheme_by_time()
+  if is_morning() then
+    return "rose-pine-dawn"
+  elseif is_afternoon() then
+    return "rose-pine"
+  elseif is_evening() then
+    return "rose-pine-moon"
+  else
+    return "rose-pine"
+  end
+end
+
+--- Check if it is weekend
+--- @return boolean
+local function is_weekend()
+  local day = tonumber(os.date("%w"))
+  return day == 0 or day == 6
+end
+
+--- Random colorscheme
+--- @return string
+local function random_colorscheme()
+  local colorschemes = {
+    "rose-pine",
+    "rose-pine-dawn",
+    "rose-pine-moon",
+    "nord",
+    "nightfox",
+    "tokyonight",
+  }
+  if is_weekend() then
+    return colorschemes[math.random(1, #colorschemes)]
+  end
+
+  return set_colorscheme_by_time()
+end
+
 return {
+  --- Lazy load colorscheme
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = set_colorscheme_by_time(),
+    },
+  },
   {
     "tokyonight.nvim",
-    priority = 1000,
+    -- priority = 1000,
+    lazy = true,
     opts = function()
       return {
         style = "day",
@@ -66,8 +134,7 @@ return {
   },
   {
     "gbprod/nord.nvim",
-    lazy = false,
-    priority = 1000,
+    lazy = true,
     enabled = false,
     config = function()
       require("nord").setup({})
@@ -76,6 +143,7 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
+    lazy = true,
     enabled = false,
     config = function()
       -- Default options
@@ -88,11 +156,11 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    priority = 1000,
+    lazy = true,
     config = function()
       require("rose-pine").setup({
         variant = "auto",
-        dark_variant = "dawn",
+        dark_variant = "moon",
         dim_inactive_windows = false,
         extend_background_behind_borders = true,
 
@@ -125,14 +193,31 @@ return {
 
           -- lovely statusline
           StatusLine = { fg = "pine", bg = "pine", blend = 10 },
+          -- StatusLine = { fg = "love", bg = "love", blend = 10 },
           StatusLineNC = { fg = "subtle", bg = "surface" },
 
+          -- b0o/incline.nvim
           InclineNormal = { fg = "surface", bg = "pine" },
           InclineNormalNC = { fg = "text", bg = "surface" },
         },
       })
 
-      vim.cmd("colorscheme rose-pine")
+      -- vim.cmd("colorscheme rose-pine")
     end,
   },
+  --- auto dark mode
+  -- "f-person/auto-dark-mode.nvim",
+  -- opts = {
+  --   update_interval = 1000,
+  --   set_dark_mode = function()
+  --     print("dark mode")
+  --     -- vim.opt.background = "dark"
+  --     vim.cmd("colorscheme rose-pine-moon")
+  --   end,
+  --   set_light_mode = function()
+  --     print("light mode")
+  --     -- vim.opt.background = "light"
+  --     vim.cmd("colorscheme rose-pine-dawn")
+  --   end,
+  -- },
 }
