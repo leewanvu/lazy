@@ -33,31 +33,6 @@ local function set_colorscheme_by_time()
   end
 end
 
---- Check if it is weekend
---- @return boolean
-local function is_weekend()
-  local day = tonumber(os.date("%w"))
-  return day == 0 or day == 6
-end
-
---- Random colorscheme
---- @return string
-local function random_colorscheme()
-  local colorschemes = {
-    "rose-pine",
-    "rose-pine-dawn",
-    "rose-pine-moon",
-    "nord",
-    "nightfox",
-    "tokyonight",
-  }
-  if is_weekend() then
-    return colorschemes[math.random(1, #colorschemes)]
-  end
-
-  return set_colorscheme_by_time()
-end
-
 return {
   --- Lazy load colorscheme
   {
@@ -206,18 +181,20 @@ return {
     end,
   },
   --- auto dark mode
-  -- "f-person/auto-dark-mode.nvim",
-  -- opts = {
-  --   update_interval = 1000,
-  --   set_dark_mode = function()
-  --     print("dark mode")
-  --     -- vim.opt.background = "dark"
-  --     vim.cmd("colorscheme rose-pine-moon")
-  --   end,
-  --   set_light_mode = function()
-  --     print("light mode")
-  --     -- vim.opt.background = "light"
-  --     vim.cmd("colorscheme rose-pine-dawn")
-  --   end,
-  -- },
+  {
+    "f-person/auto-dark-mode.nvim",
+    opts = {
+      update_interval = 3000,
+      set_dark_mode = function()
+        print("dark mode")
+        -- vim.opt.background = "dark"
+        vim.cmd("colorscheme rose-pine-moon")
+      end,
+      set_light_mode = function()
+        print("light mode")
+        -- vim.opt.background = "light"
+        vim.cmd("colorscheme rose-pine-dawn")
+      end,
+    },
+  },
 }
