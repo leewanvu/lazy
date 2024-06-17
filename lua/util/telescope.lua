@@ -1,5 +1,3 @@
-local Util = require("lazyvim.util")
-
 local M = {}
 
 function M.find_files()
@@ -12,9 +10,10 @@ function M.find_files()
     "-g",
     "!{node_modules,.git,vendor}",
   }
+  -- opts.cwd = vim.fn.expand("%:p:h")
   -- opts.previewer = false
 
-  return Util.telescope("find_files", opts)
+  require("telescope.builtin").find_files(opts)
 end
 
 return M

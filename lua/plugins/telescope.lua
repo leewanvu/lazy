@@ -16,8 +16,8 @@ return {
       -- },
     },
     keys = {
-      { "<leader>ff", Util.find_files(), desc = "Find Files (root dir)" },
-      { "<leader><space>", Util.find_files(), desc = "Find Files (root dir)" },
+      { "<leader>ff", Util.find_files, desc = "Find Files (root dir)" },
+      { "<leader><space>", Util.find_files, desc = "Find Files (root dir)" },
       {
         "<leader>fP",
         function()

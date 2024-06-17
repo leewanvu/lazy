@@ -1,3 +1,7 @@
+local THEME_DEFAULT = "rose-pine"
+local THEME_LIGHT = "rose-pine-dawn"
+local THEME_DARK = "rose-pine-moon"
+
 --- Check if it is morning
 --- @return boolean
 local function is_morning()
@@ -23,13 +27,13 @@ end
 --- @return string
 local function set_colorscheme_by_time()
   if is_morning() then
-    return "rose-pine-dawn"
+    return THEME_LIGHT
   elseif is_afternoon() then
-    return "rose-pine"
+    return THEME_DARK
   elseif is_evening() then
-    return "rose-pine-moon"
+    return THEME_DARK
   else
-    return "rose-pine"
+    return THEME_DEFAULT
   end
 end
 
