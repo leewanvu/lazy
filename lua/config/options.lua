@@ -1,5 +1,7 @@
 vim.scriptencoding = "utf-8"
 
+vim.g.snacks_animate = false
+
 local opt = vim.opt
 
 opt.encoding = "utf-8"
