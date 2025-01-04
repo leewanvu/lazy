@@ -1,6 +1,7 @@
 if true then
   return {}
 end
+
 local Util = require("util.telescope")
 
 return {

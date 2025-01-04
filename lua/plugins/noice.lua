@@ -1,6 +1,7 @@
 if true then
   return {}
 end
+
 return {
   "folke/noice.nvim",
   opts = function(_, opts)

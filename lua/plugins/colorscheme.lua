@@ -112,27 +112,6 @@ return {
     end,
   },
   {
-    "gbprod/nord.nvim",
-    lazy = true,
-    enabled = false,
-    config = function()
-      require("nord").setup({})
-      -- vim.cmd.colorscheme("nord")
-    end,
-  },
-  {
-    "EdenEast/nightfox.nvim",
-    lazy = true,
-    enabled = false,
-    config = function()
-      -- Default options
-      require("nightfox").setup({})
-
-      -- setup must be called before loading
-      -- vim.cmd.colorscheme("dawnfox")
-    end,
-  },
-  {
     "rose-pine/neovim",
     name = "rose-pine",
     lazy = true,
