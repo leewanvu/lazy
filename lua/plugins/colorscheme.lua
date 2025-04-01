@@ -149,6 +149,18 @@ return {
           TelescopePromptNormal = { fg = "text", bg = "surface" },
           TelescopePromptBorder = { fg = "surface", bg = "surface" },
 
+          -- boardless fzf-lua
+          -- FloatBorder = { fg = "overlay", bg = "overlay" },
+          --
+          -- FzfLuaBorder = { fg = "overlay", bg = "overlay" },
+          -- FzfLuaNormal = { fg = "subtle", bg = "overlay" },
+          -- FzfLuaCursorLine = { fg = "text", bg = "highlight_med" },
+          --
+          -- FzfLuaTitle = { fg = "base", bg = "pine" },
+          -- FzfLuaPreviewTitle = { fg = "base", bg = "iris" },
+          --
+          -- FzfLuaFzfPrompt = { fg = "text", bg = "surface" },
+
           -- lovely statusline
           StatusLine = { fg = "pine", bg = "pine", blend = 10 },
           -- StatusLine = { fg = "love", bg = "love", blend = 10 },
